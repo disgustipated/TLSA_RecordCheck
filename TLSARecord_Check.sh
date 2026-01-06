@@ -124,12 +124,12 @@ for domainname in "${!apiHash[@]}"; do
     CF_return=$(get_tlsa_records ${zoneHash[$domainname]} ${apiHash[$domainname]} $domainname)
     CF_record_id=$(echo $CF_return | jq -r '.result[].id')
     modify_tlsa_record ${zoneHash[$domainname]} ${apiHash[$domainname]} $domainname $cert_hash $CF_record_id
-    send_email "TEST $domainname TLSA Record Requires Update" $SCRIPTSMTPTO "$domainname needs a TLSA record update 
+    send_email "$domainname TLSA Record Required Update" $SCRIPTSMTPTO "$domainname needed a TLSA record update 
     cert hash was: $cert_hash 
     current dns record was: $dnsrecord"
   fi
 done
 
 if [ "$allclear" = true ]; then
-  send_email "TEST TLSA Records Clear" $SCRIPTSMTPTO "All domains TLSA are matching"
+  send_email "TLSA Records Clear" $SCRIPTSMTPTO "All domains TLSA are matching"
 fi
