@@ -5,7 +5,7 @@ Pulls in a list of domains to check and updates the records in cloudflare.
 
 The list should be built like this
 
-domain.com 1234domain1cloudflareapikeyabc 1234domain1cloudflarezoneidabc
+domain.com 1234domain1cloudflareapikeyabc 1234domain1cloudflarezoneidabc\
 domain2.com 1234domain2cloudflareapikeyabc 1234domain2cloudflarezoneidabc
 
 # Env Vars
